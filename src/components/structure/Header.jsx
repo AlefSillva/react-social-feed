@@ -4,9 +4,11 @@ export default function Header() {
     return (
         <header className={styles.cabecalho}>
             <h1 className={styles["header-title"]}>
-                <img src="./assets/logo.png" alt="React Social Feed" />
+                <img src="src/assets/logo.png" alt="React Social Feed" />
             </h1>
             <h2 className={styles["header-subtitle"]}>React Social Feed</h2>
         </header>
     )
 }
+
+
