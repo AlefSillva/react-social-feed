@@ -1,21 +1,18 @@
 import styles from "./Post.module.css";
-import { useState } from "react";
 import CommentList from "../comment/CommentList";
 
-export default function Post({post}) {
-    const [showComments, setShowComments] = useState(false);
+export default function Post({ post, isSelected, isGrid, onClick }) {
+  return (
+    <div
+      className={`${styles.postCard} ${
+        isGrid && isSelected ? styles.expandedCard : ""
+      }`}
+      onClick={onClick}
+    >
+      <h3>{post.title}</h3>
+      <p>{post.body}</p>
 
-    const handleClick = () => {
-        setShowComments(!showComments);
-    }
-
-    return (
-        <div>
-            <div className={styles.postCard} onClick={() => setShowComments(!showComments)}>
-                <h3 onClick={handleClick}>{post.title}</h3>
-                <p>{post.body}</p>
-            </div>
-                {showComments && <CommentList postId={post.id} />}
-        </div>
-    )
+      {isSelected && <CommentList postId={post.id} />}
+    </div>
+  );
 }

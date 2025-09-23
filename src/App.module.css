@@ -5,7 +5,7 @@
 
 .app-container {
   display: grid;
-  /* grid-template-rows: auto 1fr auto; */
+  grid-template-rows: auto 1fr auto;
   grid-template-columns: repeat(3, auto);
   grid-template-areas:
     "cabecalho cabecalho cabecalho"
@@ -39,9 +39,11 @@
 
 .principal {
   grid-area: principal;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 1.5rem;
-  justify-items: center;
-  text-align: justify;
+  gap: 1rem;
 }
 
 .rodape {
@@ -53,4 +55,10 @@
   height: 70px;
   text-align: center;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .layoutToggle{
+    display: none;
+  }
 }
