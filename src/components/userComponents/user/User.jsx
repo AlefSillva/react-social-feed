@@ -5,7 +5,7 @@ export default function User({ user, onClick }) {
     <div className={styles.card} onClick={() => onClick(user.id)}>
       <div>
         <img 
-          src={`https://picsum.photos/seed/${user.id}/100/100`} 
+          src={`https://i.pravatar.cc/100?u=${user.id}`} 
           alt="foto de perfil aleatória" 
         />
       </div>

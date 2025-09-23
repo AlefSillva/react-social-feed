@@ -2,37 +2,66 @@
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
     max-width: 400px;
 }
 
 .commentCard {
+    position: relative; /* para posicionar o delete */
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 0.8rem 1rem;
+    padding: 10px 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.2s ease;
 }
 
 .commentCard:hover {
-  box-shadow: 0 6px 16px rgba(0, 170, 245, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 170, 245, 0.2);
 }
 
-.commentCard h4 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: bold;
+.commentTop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.userName {
+    font-weight: 600;
+    font-size: 0.9rem;
     color: #333;
 }
 
-.username {
+.userHandle {
     font-size: 0.85rem;
-    color: #777;
-    margin: 0.2rem 0 0.6rem 0;
+    color: #aaaaaa;
 }
 
-.commentCard p {
+.commentBody {
+    margin-top: 6px;
     font-size: 0.95rem;
     color: #444;
-    margin: 0;
     line-height: 1.4;
+}
+
+.deleteIcon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    color: rgb(148, 148, 148);
 }

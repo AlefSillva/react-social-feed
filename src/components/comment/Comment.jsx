@@ -17,12 +17,22 @@ export default function Comment({ comment, onDelete }) {
 
   return (
     <div className={styles.commentCard}>
-      <h4>{name}</h4>
-      <p className={styles.username}>{username}</p>
-      <p>{limitCaracters}</p>
+      <div className={styles.commentTop}>
+        <img
+          src={`https://i.pravatar.cc/40?u=${comment.id}`}
+          alt="Avatar do usuário"
+          className={styles.avatar}
+        />
+        <div className={styles.userInfo}>
+          <span className={styles.userName}>{name}</span>
+          <span className={styles.userHandle}>{username}</span>
+        </div>
+      </div>
+
+      <p className={styles.commentBody}>{limitCaracters}</p>
 
       <DeleteIcon
-        style={{ cursor: "pointer", color: "red", marginTop: "0.5rem" }}
+        className={styles.deleteIcon}
         onClick={() => {
           if (window.confirm("Deseja realmente excluir este comentário?")) {
             onDelete(comment.id);
