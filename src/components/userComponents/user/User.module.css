@@ -31,7 +31,17 @@
 }
 
 .card img {
-  width: 70%;
-  height: auto;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.userInfo h3, .userInfo p {
+  font-size: 0.9rem;
 }

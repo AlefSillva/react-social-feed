@@ -13,15 +13,21 @@
 }
 
 .postCard {
-    position: relative; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
     padding: 15px;
     border-radius: 8px;
     background-color: #ffffff;
     max-width: 600px;
+    min-height: 150px;
+    max-height: 250px;
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     cursor: pointer;
     transition: transform 0.2s ease;
-    overflow: hidden; 
+    overflow: hidden;
+    gap: 6px;
 }
 
 
@@ -30,7 +36,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 6px; 
+    width: 6px;
     height: 100%;
     background: linear-gradient(180deg, #FF575C, #00ABF5);
     border-top-left-radius: 8px;
@@ -38,10 +44,20 @@
 }
 
 .expandedCard {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
+    max-height: none;
+}
+
+.postCard:not(.expandedCard) {
+    max-height: 250px;
 }
 
 .postCard:hover {
-    transform: scale(1.03); 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.postCard h3,
+.postCard p {
+    font-size: 0.95rem;
 }
