@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .app-container {
@@ -25,6 +26,25 @@
   align-content: center;
   justify-items: center;
   padding: 10px;
+  position: relative;
+}
+
+.cabecalho::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;  
+  width: 100%;
+  height: 6px; 
+  background: linear-gradient(
+    90deg,
+    #F14959, 
+    #FDAA67, 
+    #00AAF5, 
+    #221D3B  
+  );
+  border-bottom-left-radius: 8px; 
+  border-bottom-right-radius: 8px;
 }
 
 .header-title {
@@ -52,10 +72,22 @@
   align-items: center;
   background-color: #20232a;
   color: white;
-  height: 70px;
+  height: 75px;
   text-align: center;
   width: 100%;
 }
+
+.rodape a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #f1af21;
+}
+
 
 @media (max-width: 768px) {
   .layoutToggle{

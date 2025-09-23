@@ -13,14 +13,35 @@
 }
 
 .postCard {
+    position: relative; 
     padding: 15px;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     max-width: 600px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.219);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden; 
+}
+
+
+.postCard::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px; 
+    height: 100%;
+    background: linear-gradient(180deg, #FF575C, #00ABF5);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .expandedCard {
-  grid-column: 1 / -1; 
+    grid-column: 1 / -1; 
+}
+
+.postCard:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }

@@ -7,10 +7,14 @@
 }
 
 .commentCard {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 0.8rem 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.219);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.commentCard:hover {
+  box-shadow: 0 6px 16px rgba(0, 170, 245, 0.2);
 }
 
 .commentCard h4 {
