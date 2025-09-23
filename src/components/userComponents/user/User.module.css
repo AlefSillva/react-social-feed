@@ -1,5 +1,5 @@
 .card {
-  position: relative; /* necessário para o ::before */
+  position: relative; 
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
