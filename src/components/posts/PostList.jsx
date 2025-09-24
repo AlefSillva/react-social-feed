@@ -22,7 +22,7 @@ export default function PostList({ userId, isGrid, onPostClick }) {
   const handleClick = (postId) => {
     const newSelectedId = selectedPostId === postId ? null : postId;
     setSelectedPostId(newSelectedId);
-    onPostClick?.(newSelectedId !== null); // avisa Main se algum post está expandido
+    onPostClick?.(newSelectedId !== null); 
   };
 
   if (loading) return <p>Carregando posts...</p>;

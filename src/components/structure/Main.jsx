@@ -10,15 +10,15 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 export default function Main() {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [isGrid, setIsGrid] = useState(true);
-  const [isPostExpanded, setIsPostExpanded] = useState(false); // só para esconder botão
+  const [isPostExpanded, setIsPostExpanded] = useState(false); 
 
   const handleUserClick = (userId) => {
     setSelectedUserId(userId);
-    setIsPostExpanded(false); // reseta quando troca de usuário
+    setIsPostExpanded(false); 
   };
 
   const handlePostClick = (expanded) => {
-    setIsPostExpanded(expanded); // recebe do PostList se algum post está expandido
+    setIsPostExpanded(expanded); 
   };
 
   const backToPosts = () => {
@@ -33,7 +33,7 @@ export default function Main() {
         onBackToPosts={backToPosts}
       />
 
-      {/* botão só aparece se nenhum post estiver expandido */}
+      
       {!isPostExpanded && (
         <button
           className={styles.layoutToggle}
@@ -49,7 +49,7 @@ export default function Main() {
         <PostList
           userId={selectedUserId}
           isGrid={isGrid}
-          onPostClick={handlePostClick} // só para avisar Main se algum post está expandido
+          onPostClick={handlePostClick} 
         />
       )}
     </main>
