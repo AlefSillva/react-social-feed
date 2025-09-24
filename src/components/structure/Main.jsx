@@ -9,38 +9,48 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 
 export default function Main() {
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [selectedPostId, setSelectedPostId] = useState(null);
   const [isGrid, setIsGrid] = useState(true);
+  const [isPostExpanded, setIsPostExpanded] = useState(false); // só para esconder botão
 
   const handleUserClick = (userId) => {
     setSelectedUserId(userId);
+    setIsPostExpanded(false); // reseta quando troca de usuário
+  };
+
+  const handlePostClick = (expanded) => {
+    setIsPostExpanded(expanded); // recebe do PostList se algum post está expandido
   };
 
   const backToPosts = () => {
-    setSelectedPostId(null);
+    setIsPostExpanded(false);
   };
 
   return (
     <main className={styles.principal}>
       <Breadcrumb
         selectedUserId={selectedUserId}
-        selectedPostId={selectedPostId}
         onBackToUsers={() => setSelectedUserId(null)}
-        onBackToPosts={() => setSelectedPostId(null)}
+        onBackToPosts={backToPosts}
       />
 
-      <button className={styles.layoutToggle} onClick={() => setIsGrid(!isGrid)}>
-        {isGrid ? <ViewListIcon /> : <GridViewIcon />}
-      </button>
+      {/* botão só aparece se nenhum post estiver expandido */}
+      {!isPostExpanded && (
+        <button
+          className={styles.layoutToggle}
+          onClick={() => setIsGrid(!isGrid)}
+        >
+          {isGrid ? <ViewListIcon /> : <GridViewIcon />}
+        </button>
+      )}
 
       {!selectedUserId && <UserList onUserClick={handleUserClick} isGrid={isGrid} />}
 
-      {selectedUserId && !selectedPostId && (
-        <PostList userId={selectedUserId} onPostClick={setSelectedPostId} isGrid={isGrid}/>
-      )}
-
-      {selectedUserId && selectedPostId && (
-        <CommentList postId={selectedPostId} onBack={backToPosts} />
+      {selectedUserId && (
+        <PostList
+          userId={selectedUserId}
+          isGrid={isGrid}
+          onPostClick={handlePostClick} // só para avisar Main se algum post está expandido
+        />
       )}
     </main>
   );

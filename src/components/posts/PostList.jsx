@@ -3,7 +3,7 @@ import { fetchPosts } from "../fetchData/FetchData";
 import Post from "./Post"; 
 import styles from "../posts/Post.module.css";
 
-export default function PostList({ userId, isGrid }) {
+export default function PostList({ userId, isGrid, onPostClick }) {
   const [posts, setPosts] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,16 +20,13 @@ export default function PostList({ userId, isGrid }) {
   }, [userId]);
 
   const handleClick = (postId) => {
-    setSelectedPostId(selectedPostId === postId ? null : postId);
+    const newSelectedId = selectedPostId === postId ? null : postId;
+    setSelectedPostId(newSelectedId);
+    onPostClick?.(newSelectedId !== null); // avisa Main se algum post está expandido
   };
 
-  if (loading) {
-    return <p>Carregando posts...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
+  if (loading) return <p>Carregando posts...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <>

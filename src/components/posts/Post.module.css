@@ -16,7 +16,6 @@
     width: 100%;
     max-width: 700px;
     padding: 10px 20px;
-    height: 100px;
     padding: 5px 20px;
 }
 
@@ -27,7 +26,7 @@
     padding: 15px;
     border-radius: 8px;
     background-color: #f0f0f0;
-    max-height: 250px;
+    
     cursor: pointer;
     transition: transform 0.2s ease;
     overflow: hidden;
@@ -48,8 +47,8 @@
 }
 
 .postCard:hover {
-  transform: scale(1.05);
-  border: 1px solid blue; 
+    transform: scale(1.05);
+    border: 1px solid blue;
 }
 
 .expandedCard {
@@ -58,7 +57,8 @@
 }
 
 .postCard:not(.expandedCard) {
-    max-height: 250px;
+    max-height: 100%;
+    padding: 20px;
 }
 
 .postCard:hover {
