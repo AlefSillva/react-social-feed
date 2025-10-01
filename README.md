@@ -32,6 +32,31 @@ Um aplicativo ReactJS que consome a API [JSONPlaceholder](https://jsonplaceholde
 
 ---
 
+## Como Rodar Localmente
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/AlefSillva/react-social-feed.git
+   cd react-social-feed
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Execute o projeto**
+   ```bash
+   npm run dev
+   ```
+
+4. **Abra no navegador**
+   O projeto estará rodando em: [http://localhost:5173](http://localhost:5173)
+
+⚠️ Nota: o comando `npm install` só precisa ser executado na primeira vez que você rodar o projeto ou sempre que novas dependências forem adicionadas.
+
+---
+
 ## Autor
 
 - Nome: Alef Silva Santos
